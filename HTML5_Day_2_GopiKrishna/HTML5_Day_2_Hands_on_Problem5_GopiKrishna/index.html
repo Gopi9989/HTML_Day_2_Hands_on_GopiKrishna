@@ -1,0 +1,65 @@
+<!-- HTML5_Day_2_Hands_on_Problem5_GopiKrishna
+Requirements
+Create an enrollment form using:
+	•	<datalist> for course suggestions
+	•	<progress> to show enrollment completion
+	•	<meter> to indicate skill level (Beginner–Advanced)
+Include modern input types:
+	•	email
+	•	range
+	•	number
+Use built-in validation
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Enrollment Form</title>
+</head>
+<body>
+    <form>
+        <h3>Course Enrollment</h3>
+        <h3>Student Details</h3>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <br><br>
+
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" min="16" max="40" required>
+        <br><br>
+        
+        <label for="course">Choose Course:</label><br>
+        <input list="courses" id="course" name="course" placeholder="Select or type a course" required>
+        <datalist id="courses">
+            <option value="HTML">
+            <option value="CSS">
+            <option value="JavaScript">
+            <option value="Python">
+            <option value="Java">
+        </datalist>
+        <br><br>
+
+        <section>
+            <h4>Enrollment Completion</h4>
+            <progress value="60" max="100">60%</progress>
+        </section>
+        <br><br>
+
+        <label for="skill">Skill Level (Beginner → Advanced):</label><br>
+        <meter id="skill" min="0" max="100" low="30" high="70" optimum="80" value="70"></meter>
+        <br><br>
+
+        <label for="experience">Experience Level:</label><br>
+        <input type="range" id="experience" name="experience" min="0" max="10" value="5">
+        <br><br>
+
+        <input type="submit" value="Enroll">
+
+    </form>
+
+</body>
+</html>

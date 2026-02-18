@@ -1,0 +1,49 @@
+<!--HTML5_Day_2_Hands_on_Problem1_GopiKrishna
+	•	Add a navigation bar with Home and Contact links
+	•	Create a registration form with:
+	•	Name
+	•	Email
+	•	Password
+	•	Gender (radio buttons)
+	•	Course selection (dropdown)
+	•	Use required and placeholder attributes-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+</head>
+<body><!--Gopi Krishna Mannava-->
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+    <h2>This is my Home Page</h2>
+     <h2>Registration Form</h2>
+    <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter name" required>
+        <br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter email" required>
+        <br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+        <br>
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <br>
+        <label for="course">Course:</label><br>
+        <input list="courseList" id="course" name="course" placeholder="Type a course" required>
+         <datalist id="courseList">
+            <option value="Java">
+            <option value="Python">
+            <option value=".NET">
+            <option value="Web Development">
+        </datalist>
+        <br><br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
