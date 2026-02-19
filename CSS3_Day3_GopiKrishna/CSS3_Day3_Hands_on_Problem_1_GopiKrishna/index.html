@@ -1,0 +1,58 @@
+<!--CSS3_Day3_Hands_on_Problem_1_GopiKrishna
+Hands-on Tasks:
+	•	Create an external CSS file and link it to HTML
+	•	Apply different text styles to headings and paragraphs
+	•	Add background color and borders to a section
+	•	Demonstrate margin and padding on a div
+	•	Style the form created on Day 2
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Box Model Demo</h1>
+    <p>This is the paragraph demonstrating text styling. The text is styled with a specific font family and background color.
+        The heading has a different font family and color to distinguish it from the paragraph.
+    </p>
+    <section>
+        <div class="box-model-demo">
+            This div demonstrates margin and padding.
+        </div>
+    </section>
+
+    <h1>Student Registration Form</h1>
+
+    <form class="registration-form">
+
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name"
+               placeholder="Enter your full name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email"
+               placeholder="example@mail.com" required>
+
+        <label for="phone">Mobile Number:</label>
+        <input type="tel" id="phone" name="phone"
+               placeholder="10-digit mobile number"
+               pattern="[0-9]{10}" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"
+               min="18" max="30" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <input type="submit" value="Register">
+
+    </form>
+
+</body>
+</html>

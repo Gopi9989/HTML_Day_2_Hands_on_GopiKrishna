@@ -1,0 +1,86 @@
+<!--Requirements
+Create a layout with:
+	•	Sidebar navigation
+	•	Main content area
+	•	Info cards inside the main section
+Use:
+	•	display properties
+	•	Flexbox or Grid for page structure
+Style:
+	•	Sidebar with background color
+	•	Cards with borders, padding, and margins
+Apply media queries to:
+	•	Convert sidebar into top navigation on mobile
+	•	Stack cards vertically on small screens
+
+🛠️ Technical Constraints
+	•	HTML + CSS only
+	•	No JavaScript
+	•	No external UI libraries
+
+🎯 Learning Outcome
+You will be able to:
+	•	Master page layouts using Flexbox/Grid
+	•	Apply modern responsive web design techniques
+	•	Understand how layout adapts across devices
+	•	Build industry-relevant UI structures
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Dashboard</title>
+
+    <!-- Required for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <h2>Admin</h2>
+            <ul>
+                <li>Dashboard</li>
+                <li>Users</li>
+                <li>Reports</li>
+                <li>Settings</li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1>Dashboard Overview</h1>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Users</h3>
+                    <p>1,245 Active Users</p>
+                </div>
+
+                <div class="card">
+                    <h3>Revenue</h3>
+                    <p>$32,500 This Month</p>
+                </div>
+
+                <div class="card">
+                    <h3>Orders</h3>
+                    <p>860 New Orders</p>
+                </div>
+
+                <div class="card">
+                    <h3>Performance</h3>
+                    <p>Server uptime 99.9%</p>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>
+

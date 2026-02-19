@@ -1,0 +1,63 @@
+body {
+    font-family:'Times New Roman', Times, serif;
+    background-color: #c7b5a8;
+    padding: 30px;
+}
+
+h1{
+    text-align: center;
+    color: #1d2671;
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic; /* different text style */
+    font-size: 14px;
+    line-height: 1.6;
+    color: #2c9e45;
+}
+
+.box-model-demo {
+    background-color: #cce5ff; /* background color and border for section */
+    border: 2px dashed #004085;
+    padding: 20px; 
+    margin: 30px 0;    /* margin and padding */
+    text-align: center;
+    font-weight: bold;
+}
+
+.registration-form {
+    font-family:'Courier New', Courier, monospace;
+    background-color: #2e6575;
+    border: 2px solid #030410;
+    padding: 25px;
+    margin: 30px auto;
+    width: 350px;
+    border-radius: 8px;
+}
+
+.registration-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 12px;
+}
+
+.registration-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    box-sizing: border-box;
+}
+
+.registration-form input[type="submit"] {
+    margin-top: 20px;
+    background-color: #1d2671;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.registration-form input[type="submit"]:hover {
+    background-color: #c33764;
+}

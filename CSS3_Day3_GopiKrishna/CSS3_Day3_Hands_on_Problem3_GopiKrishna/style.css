@@ -1,0 +1,37 @@
+body {                     
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    padding: 40px;
+}
+
+.features-section {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.features-section h2 {
+    text-align: center;
+    color: #1d2671;
+    margin-bottom: 20px;
+}
+
+.feature-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+    
+.feature-list li {
+    background-color: #ffffff;
+    color: #333; 
+    border: 2px solid #1d2671;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+}
+
+.feature-list li:hover {
+    cursor: pointer;
+    background-color: #1d2671;
+    color: #ffffff;
+}
