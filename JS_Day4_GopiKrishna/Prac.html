@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML CSS JS Interview Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Semantic Header -->
+    <header>
+        <h1>Student Portal</h1>
+        <p>HTML • CSS • JavaScript Basics Demo</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#table">Marks</a>
+        <a href="#form">Form</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Student</h2>
+            <p>This section demonstrates headings, paragraphs, lists and semantic HTML.</p>
+
+            <ul>
+                <li>HTML5 Structure</li>
+                <li>CSS Styling</li>
+                <li>JavaScript Logic</li>
+            </ul>
+        </section>
+
+        <!-- Table Section -->
+        <section id="table">
+            <h2>Student Marks</h2>
+
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Marks</th>
+                </tr>
+                <tr>
+                    <td>Maths</td>
+                    <td>85</td>
+                </tr>
+                <tr>
+                    <td>Science</td>
+                    <td>72</td>
+                </tr>
+                <tr>
+                    <td>English</td>
+                    <td>65</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Form Section -->
+        <section id="form">
+            <h2>Registration Form</h2>
+
+            <form onsubmit="calculateGrade(event)">
+                <label>Name:</label>
+                <input type="text" required placeholder="Enter name">
+
+                <label>Email:</label>
+                <input type="email" required placeholder="Enter email">
+
+                <label>Marks:</label>
+                <input type="number" id="marks" min="0" max="100" required>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <p id="result"></p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Student Portal</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function calculateGrade(event) {
+            event.preventDefault();
+
+            let marks = document.getElementById("marks").value;
+            let result = document.getElementById("result");
+
+            if (marks >= 75) {
+                result.innerHTML = "Grade: A";
+            } else if (marks >= 60) {
+                result.innerHTML = "Grade: B";
+            } else if (marks >= 40) {
+                result.innerHTML = "Grade: C";
+            } else {
+                result.innerHTML = "Fail";
+            }
+        }
+    </script>
+
+</body>
+</html>

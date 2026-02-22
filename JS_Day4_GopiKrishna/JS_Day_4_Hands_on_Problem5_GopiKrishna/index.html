@@ -1,0 +1,41 @@
+<!--JS_Day_4_Hands_on_Problem5_GopiKrishna
+Requirements
+	•	Store a number in a variable
+	•	Use conditional (ternary) operator to check:
+	•	Positive or Negative
+	•	Use if–else to check:
+	•	Even or Odd
+	•	Use a loop to print all numbers from 1 to the given number
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Analysis Tool</title>
+</head>
+<body>
+
+    <h2>Number Analysis Tool</h2>
+    <script>
+        let number = prompt("Enter a number:");
+        if(isNaN(number)){
+            console.log("Please enter a valid number.");
+        } else {
+            number = parseInt(number);
+            let result = number == 0 ? "Zero" : number > 0 ? "Positive" : "Negative";
+            console.log(result);
+        
+            if(number % 2 == 0){
+                console.log("The number is Even.");
+            } else{
+            console.log("The number is Odd.");
+        }
+        
+        for(let i=1;i<=number;i++){
+            console.log(i);
+        }
+     }
+    </script>
+</body>
+</html>
