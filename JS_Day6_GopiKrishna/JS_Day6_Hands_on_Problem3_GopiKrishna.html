@@ -1,0 +1,150 @@
+<!--
+Problem 3: Location-Based Weather Logger (Level-2)
+ScenarioCreate a web application that fetches the user's geographic location and stores location history in localStorage.
+Requirements
+	•	Button: Get My Location
+	•	Use:
+      navigator.geolocation.getCurrentPosition()
+	•	Display:
+      Latitude
+      Longitude
+	•	Handle:
+      Permission denied
+      Timeout
+      Location unavailable
+	•	Save last 5 location entries in localStorage.
+	•	Display location history on page load.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Location Logging</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    button {
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+    .info {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .error {
+      color: red;
+    }
+    .success {
+      color: green;
+    }
+    ul {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body onload="loadHistory()">
+
+  <h2>Location-Based Weather Logger</h2>
+
+  <button onclick="getLocation()">Get My Location</button>
+
+  <div id="status" class="info"></div>
+
+  <h3>Current Location</h3>
+  <div id="currentLocation" class="info"></div>
+
+  <h3>Location History (Last 5)</h3>
+  <ul id="historyList"></ul>
+
+  <script>
+    function getLocation() {
+      let status = document.getElementById("status");
+
+      if (!navigator.geolocation) {
+        status.textContent = "Geolocation is not supported by this browser.";
+        status.className = "info error";
+        return;
+      }
+
+      status.textContent = "Fetching location...";
+      status.className = "info";
+
+      navigator.geolocation.getCurrentPosition(
+        successCallback,
+        errorCallback,
+        { timeout: 10000 }
+      );
+    }
+
+    function successCallback(position) {
+      let lat = position.coords.latitude;
+      let lon = position.coords.longitude;
+
+      document.getElementById("currentLocation").textContent =
+        "Latitude: " + lat + " | Longitude: " + lon;
+
+      document.getElementById("status").textContent = "Location fetched successfully";
+      document.getElementById("status").className = "info success";
+
+      saveLocation(lat, lon);
+      loadHistory();
+    }
+
+    function errorCallback(error) {
+      let msg = "";
+
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          msg = "Permission denied by user.";
+          break;
+        case error.POSITION_UNAVAILABLE:
+          msg = "Location information unavailable.";
+          break;
+        case error.TIMEOUT:
+          msg = "Location request timed out.";
+          break;
+        default:
+          msg = "Unknown error occurred.";
+      }
+
+      let status = document.getElementById("status");
+      status.textContent = msg;
+      status.className = "info error";
+    }
+
+    function saveLocation(lat, lon) {
+      let history = JSON.parse(localStorage.getItem("locations")) || [];
+
+      let entry = {
+        latitude: lat,
+        longitude: lon,
+        time: new Date().toLocaleString()
+      };
+
+      history.unshift(entry);
+
+      if (history.length > 5) {
+        history.pop();
+      }
+
+      localStorage.setItem("locations", JSON.stringify(history));
+    }
+
+    function loadHistory() {
+      let history = JSON.parse(localStorage.getItem("locations")) || [];
+      let list = document.getElementById("historyList");
+      list.innerHTML = "";
+
+      history.forEach(item => {
+        let li = document.createElement("li");
+        li.textContent =
+          item.latitude + ", " + item.longitude + " (" + item.time + ")";
+        list.appendChild(li);
+      });
+    }
+  </script>
+
+</body>
+</html>

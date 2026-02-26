@@ -1,0 +1,67 @@
+<!--
+Requirements
+	•	A textarea for writing notes.
+	•	A Save button (using onclick).
+	•	A Clear button.
+	•	Notes must:
+Be stored in localStorage
+Automatically load when the page refreshes
+	•	Display stored note on page load.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Notes</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            background-color: bisque;
+            width: 100%;
+            max-width: 600px;
+        }
+        button {
+            background-color: skyblue;
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Personal Notes</h1>
+    <textarea id="notes" rows="10" cols="50" placeholder="Write your notes here..."></textarea><br>
+    <button onclick="saveNotes()">Save</button>
+    <button onclick="clearNotes()">Clear</button>
+    <script>
+
+        function saveNotes() {
+            const notes = document.getElementById('notes').value;
+            if (notes.trim() !== "") {
+                localStorage.setItem('personalNotes', notes);
+                alert('Note saved!');
+            } else {
+                alert('Please enter some notes before saving.');
+            }
+        }
+
+        function clearNotes() {
+            localStorage.removeItem('personalNotes');
+            document.getElementById('notes').value = '';
+            alert('Note cleared!');
+        }
+
+        window.onload = function() {
+            const savedNotes = localStorage.getItem('personalNotes');
+            if (savedNotes) {
+                document.getElementById('notes').value = savedNotes;
+            }
+        }
+    </script>
+</body>
+</html>
